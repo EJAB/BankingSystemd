@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="Online Banking System Assignment">
+<meta name="author" content="Emi Janela Bumanglag">
+<title>EJAB Bank | Welcome</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="./css/fontawesome.min.css">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+	<div class="w3-sidebar w3-bar-block w3-card w3-animate-left"
+		style="display: none" id="mySidebar">
+		<button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close&times;</button>
+		<a href="/BankingSystem/DetailsServlet" class="w3-bar-item w3-button">Account Details</a> 
+		<a href="/BankingSystem/TransactionsServlet" class="w3-bar-item w3-button">Past Transactions</a> 
+		<a class="current" href="transfer.html" class="w3-bar-item w3-button">Transfer to another account</a>
+		<a href="bills.html" class="w3-bar-item w3-button">Pay bills</a>
+	</div>
+
+	<header>
+	<button id="openNav" class="w3-button" onclick="w3_open()">&#9776;</button>
+		<div class="container">
+			<div id="branding">
+				<h1><span class="highlight">EJAB</span>Bank</h1>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="/BankingSystem/AccountHome">Home</a></li>
+					<li><a href="/BankingSystem/AccountHome">Login</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<section id="transfer">
+		<div class="container">
+			<h2>Please specify details to be transferred and to who:</h2>
+			<form method="POST" action="/BankingSystem/TransferServlet" name="myform">
+				<br /><input type="text" placeholder="firstname" name="firstname" /> <br />
+				<br /><input type="text" placeholder="surname" name="surname" /> <br />
+				<br /><input type="number" placeholder="€0.00" name="amount" /> <br />
+				<br /><input type="submit" value="Transfer" /> <br />
+			</form>
+		</div>
+	</section>
+	
+	<script>
+		function w3_open() {
+			document.getElementById("transfer").style.marginLeft = "25%";
+			document.getElementById("mySidebar").style.width = "25%";
+			document.getElementById("mySidebar").style.display = "block";
+			document.getElementById("openNav").style.display = 'none';
+		}
+		function w3_close() {
+			document.getElementById("transfer").style.marginLeft = "0%";
+			document.getElementById("mySidebar").style.display = "none";
+			document.getElementById("openNav").style.display = "inline-block";
+		}
+	</script>
+	
+	<footer>
+		<p>Emi Janela Bumanglag, Copyright &copy; 2018</p>
+	</footer>
+
+</body>
+</html>

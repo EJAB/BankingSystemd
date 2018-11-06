@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="Online Banking System Web App">
+<meta name="author" content="Emi Janela Bumanglag">
+<title>EJAB Bank | Report</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+			<div id="branding">
+				<h1>
+					<span class="highlight">EJAB</span>Bank
+				</h1>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="login.html">Login</a></li>
+					<li class="current"><a href="report.html">Report</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<section id="boxes">
+		<div class="container">
+			<div class="box">
+				<h3>Name: Emi Janela Bumanglag</h3>
+				<h3>Student Number: 14448222</h3>
+			</div>
+
+			<div class="box">
+				<h3>Assignment Requirements:</h3>
+				<p>Customers must have the ability to log in and view their
+					account details. Because of this, a registration process has been
+					included to enable anyone to register with their respective
+					details.</p>
+				<p>Customers should be able to transfer money between separate
+					accounts and view past transactions.</p>
+				<p>Customers should be able to pay off bills</p>
+			</div>
+
+			<div class="box">
+				<h4>View account details and registration and account details</h4>
+				<p>The home page is used as an introduction for anonymous users.
+					Existing users have the option to login in order to access the
+					entire application. If non-existing users wish to register, this
+					has been provided within the login page. Once logged in, the system
+					greets the user appropriately and the account details may be viewed
+					using the sidebar above the logo.</p>
+					<p>If the user is logged in, he/she must first log out to view
+					the report again.</p>
+					<p>The user has the ability to log out and then log in as a different user,
+					 which invalidates the old session and creates a new session.</p>
+			</div>
+
+			<div class="box">
+				<h4>Transfer money between accounts</h4>
+				<p>Users have the ability to transfer money between other saved
+					users. However, the user must input the fields correctly as they
+					are case sensitive.</p>
+					<p>If the user tries to transfer more money than is available on 
+					his/her account, the transaction will be cancelled and logged as INVALID.</p>
+			</div>
+
+			<div class="box">
+				<h4>Past transactions</h4>
+				<p>Users have the ability to view their past transactions, which
+					includes the transfer amount, resulting balance, date and time of
+					transaction and the recipient of the transaction, whether it be a
+					person or a bill.</p>
+			</div>
+
+			<div class="box">
+				<h4>Pay off bills</h4>
+				<p>Users have the ability to pay off bills, whether it be
+					electricity, mortgage, phone bill, insurance, or any other
+					outstanding loans.</p>
+			</div>
+
+			<div class="box">
+				<h4>SQL Statements</h4>
+				<p>To create the ejab_users table:</p>
+				<p>CREATE TABLE EJAB_USERS( ID INTEGER, SURNAME VARCHAR(30) NOT
+					NULL, FIRSTNAME VARCHAR(30) NOT NULL, USERNAME VARCHAR(30) NOT
+					NULL, PASSWORD VARCHAR(30) NOT NULL, AMOUNT INTEGER DEFAULT(0),
+					EMAIL VARCHAR(60) NOT NULL, PHONE VARCHAR(25), PRIMARY KEY (ID))</p>
+				<p>To create the ejab_senders table:</p>
+				<p>CREATE TABLE EJAB_SENDERS( TRANSACTIONID INTEGER, SENDERID
+					INTEGER, SENDERFIRST VARCHAR(30), SENDERLAST VARCHAR(30), TRANSFER
+					INTEGER, BALANCE INTEGER, TRANSACTIONTIME DATETIME, TOWARDS
+					VARCHAR(100), PRIMARY KEY(TRANSACTIONID), CONSTRAINT CONST123
+					FOREIGN KEY(SENDERID) REFERENCES EJAB_USERS )</p>
+				<p>To create the ejab_receivers table:</p>
+				<p>CREATE TABLE EJAB_SENDERS( TRANSACTIONID INTEGER, RECEIVERID
+					INTEGER, RECEIVERFIRST VARCHAR(30), RECEIVERLAST VARCHAR(30),
+					TRANSFER INTEGER, BALANCE INTEGER, TRANSACTIONTIME DATETIME,
+					PRIMARY KEY(TRANSACTIONID), CONSTRAINT CONST1234 FOREIGN
+					KEY(RECEIVERID) REFERENCES EJAB_USERS )</p>
+				<p>In case the tables get deleted, use the following to populate ejab_users table:</p>
+				<p>INSERT INTO EJAB_USERS (ID, SURNAME, FIRSTNAME, USERNAME, PASSWORD, AMOUNT, EMAIL, PHONE) 
+				VALUES (1000, 'Bloggs', 'Joe', 'bloggsj', 'pass', 1000, 'joe.bloggs@email.com', '0841234567')</p>
+				<p>INSERT INTO EJAB_USERS (ID, SURNAME, FIRSTNAME, USERNAME, PASSWORD, AMOUNT, EMAIL, PHONE) 
+				VALUES (1001, 'Doe', 'Jane', 'janedoe', 'somepass', 100000, 'jane.doe@email.com', '0841234568')</p>
+				<p>INSERT INTO EJAB_USERS (ID, SURNAME, FIRSTNAME, USERNAME, PASSWORD, AMOUNT, EMAIL, PHONE) 
+				VALUES (1002, 'Doe', 'John', 'doej', 'password', 10000, 'john.doe@email.com', '0841234569')</p>
+			</div>
+			<h4>Sample login details</h4>
+		</div>
+
+
+	</section>
+
+	<div class="container">
+		<table border=1>
+			<tr>
+				<th>Username</th>
+				<th>Password</th>
+			</tr>
+			<tr>
+				<td>bloggsj</td>
+				<td>pass</td>
+			</tr>
+			<tr>
+				<td>janedoe</td>
+				<td>somepass</td>
+			</tr>
+			<tr>
+				<td>doej</td>
+				<td>password</td>
+			</tr>
+		</table>
+	</div>
+	<footer>
+		<p>Emi Janela Bumanglag, Copyright &copy; 2018</p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="Online Banking System Assignment">
+<meta name="author" content="Emi Janela Bumanglag">
+<title>EJAB Bank | Welcome</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="./css/fontawesome.min.css">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div id="branding">
+				<h1><span class="highlight">EJAB</span>Bank</h1>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="/BankingSystem/AccountHome">Home</a></li>
+					<li class="current"><a href="login.html">Login</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<section id="login">
+		<div class="container">
+			<h2>Please login using your username and password:</h2>
+			<form method="POST" action="/BankingSystem/LoginServlet"
+				name="myform">
+				<input type="text" placeholder="Username" name="username" /> <br />
+				<br/> <input type="password" placeholder="Password" name="password" />
+				<br/><input type="submit" value="Login" /> <br /> Don't have an account yet? Register<a href="register.html"> Here</a>
+			</form>
+		</div>
+	</section>
+	
+	<footer>
+		<p>Emi Janela Bumanglag, Copyright &copy; 2018</p>
+	</footer>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="Online Banking System Assignment">
+<meta name="author" content="Emi Janela Bumanglag">
+<title>EJAB Bank | Welcome</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+			<div id="branding">
+				<h1><span class="highlight">EJAB</span>Bank</h1>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="login.html">Login</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<section id="register">
+		<div class="container">
+			<h2>Please register and input the following details:</h2>
+			<form method="POST" action="/BankingSystem/RegisterServlet"name="myform">
+				<input type="text" placeholder="Firstname" name="firstname" /> <br /><br/> 
+				<input type="text" placeholder="Surname" name="surname" /><br /><br/> 
+				<input type="text" placeholder="Username" name="username" /> <br /><br/> 
+				<input type="password" placeholder="Password" name="password" /><br /><br/> 
+				<input type="number" placeholder="€0.00" name="amount" /> <br /><br/> 
+				<input type="text" placeholder="email" name="email" /><br /><br/> 
+				<input type="text" placeholder="Phone" name="phone" /> <br /><br/> 
+				<input type="submit" value="Register" /> 
+				<br /> Already have an account? Login<a href="login.html"> Here</a>
+			</form>
+		</div>
+	</section>
+	
+	<footer>
+		<p>Emi Janela Bumanglag, Copyright &copy; 2018</p>
+	</footer>
+
+</body>
+</html>
